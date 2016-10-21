@@ -19,7 +19,7 @@ fs.readdir( fromFile, function( err, files ) {
                 // Make one pass and make the file complete
                 var fromPath = path.join( fromFile, file );
 
-                var obj = JSON.parse(fs.readFileSync(fromPath + '/delimiters.json', 'utf8'));
+                var obj = JSON.parse(fs.readFileSync(fromPath + '/basket.json', 'utf8'));
                 var locale = file.toString();
 
                 lang = obj['main'][locale]['identity']['language'];

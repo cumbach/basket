@@ -1,12 +1,9 @@
 html, body, section, article,
 h1, h2, h3, h4, p, strong, em, div, ul {
-  margin: 0;
+  margin: 0 !important;
   border: 0;
   padding: 0;
   outline: 0;
-  box-sizing: inherit;
-  // font: inherit;
-  // font-size: 13px;
   list-style: none;
   font-family: sans-serif;
   text-decoration: inherit;
@@ -15,97 +12,150 @@ h1, h2, h3, h4, p, strong, em, div, ul {
   background: transparent;
 }
 
+html, body {
+  height: 100%;
+}
+
+
 #wrapper {
-  display: inline-block;
+  padding: 15px;
 }
 
-h4 {
-  display: inline-block;
-  float: left;
-  padding: 1px 10px 8px 13px;
-  border-right: 1px solid black;
-}
-
-.selector {
-  display: inline-block;
-  padding: 5px 18px 5px 5px;
-  float: left;
-}
-
-.add-selector,
-.minus-selector {
-  vertical-align: top;
-  background-color: green;
-  height: 10px;
-  width: 10px;
-  background-position: top;
+/*HEADER*/
+#wrapper h1 {
   text-align: center;
-  padding-bottom: 15px;
-  padding-left: 7px;
-  padding-right: 7px;
-  border-radius: 50%;
-  float: left;
-  font-size: 20px;
-  position: relative;
-  left: 14px;
-}
-.minus-selector {
-  background-color: red;
-}
-
-.agent {
-  float: left;
-  display: block;
-  position: relative;
-  left: 12px;
-  top: -3px;
-  padding: 3px;
-  border-bottom: 1px solid black;
-
-}
-
-.list {
-  position: relative;
-  top: 5px;
-  display: table;
-  width: 100%;
 }
 
 .row-headers {
-  top: 10px;
-  position: relative;
-  height: 30px;
-  border-bottom: 1px solid black;
-  /*margin-left: 10px;
-  margin-right: 30px;*/
+  margin-bottom: 20px !important;
 }
 
-.row {
-  position: relative;
-  height: 30px;
-  width: 100%;
-  border-bottom: 1px solid black;
-  /*padding-left: 30px;*/
-
-}
-
-.language {
+.list-name-section {
+  width: 70%;
   display: inline-block;
+  margin: 30px;
+}
+
+.list-name-section .list-name {
+  display: inline-block;
+}
+
+.list-name-section .list-name-edit {
+  display: inline-block;
+  position: relative;
+  top: -5px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.cover {
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,.2);
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+.item-input-col {
+  width: 70%;
+  display: inline-block;
+}
+
+.item-assignment {
+  width: 30%;
+  display: inline-block;
+  margin: 0;
+}
+
+#item-input {
+  width: 40%;
+  min-width: 126px;
+}
+
+.add-item-button {
+  position: relative;
+  /*width: 20%;*/
+  left: 5px;
+}
+
+.list {
+
+}
+
+.name {
+  width: 70%;
+  display: inline-block;
+}
+
+.assigned {
+  width: 20%;
+  display:inline-block;
+  text-align: right;
+}
+
+.purchased {
+  display: inline-block;
+  margin-right: 20px !important;
+}
+
+.dropdown-menu a {
+  cursor: pointer;
+}
+
+.edit-list-modal {
+  width:100%;
+  display: inline-block;
+  position: absolute;
+  top: 150px;
+  left: 20%;
+  z-index: 3;
+}
+
+.member-div {
+  position: relative;
+  top: 20px;
+}
+
+.member-name {
   float: left;
   width: 50px;
-  border-right: 1px solid black;
-  padding-top: 5px;
-  padding-right: 3px;
-  padding-left: 30px;
-  height: 24px;
+}
+.member-email {
+  position: relative;
+  left: 30px;
 }
 
-.delimiter {
-  float: left;
+.new-member-input.input-group {
+  width: 75%;
+}
+
+#new-member-name {
+  width: 30% !important;
+}
+
+#new-member-email {
+  width: 40% !important;
+}
+.add-item-buttom {
+  width: 20%;
+}
+
+.modal-done {
   position: relative;
-  display: inline-block;
-  width: 0;
-  padding-left: 73px;
-  padding-top: 5px;
-  padding-right: 73px;
+  top: 30px;
+}
+
+
+
+.input-group {
+  width: 100%;
+}
+
+.input-group-addon {
+  width: 30% !important;
+}
+
+.form-control {
+  width: 50% !important;
 }

@@ -5,6 +5,7 @@ var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
 
+
 var App = require('./components/app');
 
 document.addEventListener("DOMContentLoaded", function(){
