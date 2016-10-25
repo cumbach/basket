@@ -10,7 +10,6 @@ var GroceryItem = React.createClass({
   toggleCheck: function(e) {
     this.setState({purchased: !this.state.purchased});
     if (!this.state.purchased) {
-      console.log(e.target)
     }
   },
   componentDidMount: function(){
@@ -43,7 +42,7 @@ var GroceryItem = React.createClass({
       var newComment = e.currentTarget.parentNode.getElementsByTagName('input')[0].value;
       e.currentTarget.parentNode.getElementsByTagName('input')[0].style.display = "none";
     } else {
-      e.currentTarget.parentNode.getElementsByTagName('input')[0].style.display = "block";      
+      e.currentTarget.parentNode.getElementsByTagName('input')[0].style.display = "block";
     }
     this.setState({editComment: !this.state.editComment})
     this.setState({comments: newComment});

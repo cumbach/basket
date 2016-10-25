@@ -12,6 +12,10 @@ h1, h2, h3, h4, p, strong, em, div, ul {
   background: transparent;
 }
 
+a {
+  cursor: pointer;
+}
+
 html, body {
   height: 100%;
 }

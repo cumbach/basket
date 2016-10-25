@@ -1,6 +1,5 @@
 var React = require('react');
 var GroceryItemStore = require('../stores/groceryItemStore');
-// var ApiUtil = require('../util/apiUtil');
 var groceryItemActions = require('../actions/groceryItemActions');
 var GroceryItem = require('./groceryItem');
 var MemberModal = require('./memberModal');
@@ -18,7 +17,6 @@ var App = React.createClass({
   componentDidMount: function() {
     document.onkeypress = this.enterClicked;
     this.groceryItemListener = GroceryItemStore.addListener(this._onChange);
-    // this.nameOpen = false;
   },
   groceryItemsMap: function(){
     var map = [];
@@ -28,8 +26,6 @@ var App = React.createClass({
           return <GroceryItem
                   key={item.name}
                   name={item.name}
-                  // comments={item.comments}
-                  // assigned={item.assigned}
                   sharedList={this.state.sharedList}
                   bringUpModal={this.showModal}/>;
         }
@@ -117,7 +113,7 @@ var App = React.createClass({
         </div>
 
         <div className="list">{this.groceryItemsMap()}</div>
-        <MemberModal sharedList={this.state.sharedList} addMember={this.addMember}/>
+        <MemberModal sharedList={this.state.sharedList} addMember={this.addMember} listName={this.state.listName} groceryItems={this.state.groceryItems}/>
       </div>
     );
   }
