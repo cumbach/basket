@@ -4,6 +4,8 @@ var groceryItemActions = require('../actions/groceryItemActions');
 var GroceryItem = require('./groceryItem');
 var MemberModal = require('./memberModal');
 
+var editlist = require("../assets/editlist.png");
+
 
 var App = React.createClass({
   getInitialState: function() {
@@ -104,7 +106,7 @@ var App = React.createClass({
         <div className="row-headers">
           <div className="list-name-section">
             <h2 className="list-name">{this.state.listName}</h2>
-            <img onClick={this.changeName} className="list-name-edit" src="assets/icon_edit_active.png" alt="" />
+            <img onClick={this.changeName} className="list-name-edit" src={editlist} alt="" />
           </div>
         </div>
 

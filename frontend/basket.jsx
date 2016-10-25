@@ -4,6 +4,8 @@ var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
+require('../application.css');
+
 
 
 var App = require('./components/app');

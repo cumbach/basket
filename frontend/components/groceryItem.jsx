@@ -3,6 +3,13 @@ var React = require('react');
 var GroceryActions = require('../actions/groceryItemActions');
 var GroceryItemStore = require('../stores/groceryItemStore');
 
+var editicon = require("../assets/editicon.png");
+var downcaret = require("../assets/downcaret.png");
+var caretleft= require("../assets/caretleft.png");
+var removebutton= require("../assets/removebutton.png");
+var icon_edit_active = require("../assets/icon_edit_active.png");
+
+
 var GroceryItem = React.createClass({
   getInitialState: function() {
     return {purchased: false, assigned: "Me", comments: "", quantity: 1, showComments: false, editComment: true, name: this.props.name};
@@ -77,21 +84,19 @@ var GroceryItem = React.createClass({
   },
   render: function() {
     var commentsStyle;
-    var imgSrc1;
+    var imgSrc1 = editicon;
     var imgSrc2;
     if (this.state.showComments) {
       commentsStyle = {'display': 'inline-block'}
-      imgSrc1 = "assets/editicon.png";
-      imgSrc2 = "assets/downcaret.png"
+      imgSrc2 = downcaret;
     } else {
       commentsStyle = {'display': 'none'}
-      imgSrc1 = "assets/editicon.png";
-      imgSrc2 = "assets/caretleft.png"
+      imgSrc2 = caretleft;
     }
     return (
       <div className='grocery-item'>
         <div className='grocery-item-row'>
-          <img className="remove-button" src="assets/removebutton.png" onClick={this.removeGroceryItem}/>
+          <img className="remove-button" src={removebutton} onClick={this.removeGroceryItem}/>
           <div className="name-col">
             <div className="quantity">
               <div className="minus" onClick={this.decreaseQuantity}>-</div>
@@ -123,7 +128,7 @@ var GroceryItem = React.createClass({
         <div className="edit-comments" style={commentsStyle}>
           <div className="comments">{this.state.comments}</div>
           <input type="text-area" placeholder="Add Comment"></input>
-          <img src="assets/icon_edit_active.png" onClick={this.editComment}/>
+          <img src={icon_edit_active} onClick={this.editComment}/>
         </div>
       </div>
     );

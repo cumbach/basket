@@ -1,4 +1,5 @@
 const path = require("path");
+// require('./application.css')
 
 module.exports = {
   context: __dirname,
@@ -16,7 +17,9 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
-      }
+      },
+      { test: /\.css$/, loader: "style-loader!css-loader" },
+      { test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/, loader: "file" }
     ]
   },
   devtool: 'source-maps',
