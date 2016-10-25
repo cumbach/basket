@@ -7,7 +7,7 @@ var MemberModal = require('./memberModal');
 
 var App = React.createClass({
   getInitialState: function() {
-    return {listName: "New List", groceryItems: [], sharedList: [{shareName:"Me", email:"myemail@email.com"}, {shareName:"John", email:"johnsemail@email.com"}]};
+    return {listName: "New List", groceryItems: [], sharedList: [{shareName:"Me", email:"myemail@email.com"}]};
   },
 
   _onChange: function() {
