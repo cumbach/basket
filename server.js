@@ -3,12 +3,10 @@ var webpackDevMiddleware = require('webpack-dev-middleware')
 var webpackHotMiddleware = require('webpack-hot-middleware')
 var config = require('./webpack.config')
 var serveStatic = require('serve-static');
-// var sendMail = require('./src/api/sendmail');
-// require("css!./application.css");
 var bodyParser = require('body-parser');
 var app = new (require('express'))()
 
-var port = process.env.WEBPACK_PORT || 3000
+var port = process.env.PORT || 8080
 
 var compiler = webpack(config)
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))

@@ -1,5 +1,4 @@
 const path = require("path");
-// require('./application.css')
 
 module.exports = {
   context: __dirname,
