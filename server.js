@@ -3,7 +3,7 @@ var webpackDevMiddleware = require('webpack-dev-middleware')
 var webpackHotMiddleware = require('webpack-hot-middleware')
 var config = require('./webpack.config')
 var serveStatic = require('serve-static');
-// var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 var app = new (require('express'))()
 
 var port = process.env.PORT || 8080
@@ -13,10 +13,10 @@ app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output
 app.use(webpackHotMiddleware(compiler))
 
 // parse application/json
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 
     // parse application/x-www-form-urlencoded
-// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get('*', function(req, res) {

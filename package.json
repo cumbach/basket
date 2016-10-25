@@ -43,5 +43,9 @@
     "style-loader": "^0.13.1",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.2.0"
-  }
+  },
+  "engines" : {
+    "node" : "~0.12.7",
+    "npm" : "~2.15.0"
+   }
 }
