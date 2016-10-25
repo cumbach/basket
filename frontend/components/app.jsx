@@ -39,10 +39,12 @@ var App = React.createClass({
     var list = this.state.sharedList;
     var name = $('.add-name').val();
     var email = $('.add-email').val();
-    list.push({shareName: name, email: email});
-    this.setState({sharedList: list});
-    $('.add-name').val("");
-    $('.add-email').val("");
+    if (name.length != 0) {
+      list.push({shareName: name, email: email});
+      this.setState({sharedList: list});
+      $('.add-name').val("");
+      $('.add-email').val("");
+    }
   },
   removeModal: function() {
     this.updateName();
@@ -115,7 +117,7 @@ var App = React.createClass({
         </div>
 
         <div className="list">{this.groceryItemsMap()}</div>
-        <MemberModal sharedList={this.state.sharedList} addMember={this.addMember} listName={this.state.listName} groceryItems={this.state.groceryItems}/>
+        <MemberModal sharedList={this.state.sharedList} enterClicked={this.enterClicked} addMember={this.addMember} listName={this.state.listName} groceryItems={this.state.groceryItems}/>
       </div>
     );
   }

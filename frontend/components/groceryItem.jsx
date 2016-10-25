@@ -5,11 +5,14 @@ var GroceryItemStore = require('../stores/groceryItemStore');
 
 var GroceryItem = React.createClass({
   getInitialState: function() {
-    return {purchased: false, assigned: "Me", comments: "", quantity: 1, showComments: false, editComment: true};
+    return {purchased: false, assigned: "Me", comments: "", quantity: 1, showComments: false, editComment: true, name: this.props.name};
   },
   toggleCheck: function(e) {
     this.setState({purchased: !this.state.purchased});
-    if (!this.state.purchased) {
+    if (this.state.purchased) {
+      e.currentTarget.parentNode.parentNode.style.background = "lightgrey";
+    } else {
+      e.currentTarget.parentNode.parentNode.style.background = "#95d495";
     }
   },
   componentDidMount: function(){
@@ -51,15 +54,39 @@ var GroceryItem = React.createClass({
     var item = e.currentTarget.parentNode.getElementsByClassName('name')[0].innerHTML;
     GroceryActions.removeGroceryItem(item);
   },
+  editItemName: function(e){
+    var parent = e.currentTarget.parentNode;
+
+    if (!this.editingName) {
+      var newInput = document.createElement('input');
+      newInput.value = this.props.name;
+      parent.replaceChild(newInput, e.currentTarget.parentNode.getElementsByClassName('name')[0]);
+      this.editingName = true;
+    } else {
+      this.setState({name: "hi"});
+      var newInput = document.createElement('div');
+      var inputVal = parent.getElementsByTagName('input')[0];
+      newInput.innerHTML = inputVal.value;
+      newInput.className = 'name';
+      parent.replaceChild(newInput, inputVal);
+      this.editingName = false;
+      this.setState({name: inputVal.value})
+    }
+
+
+  },
   render: function() {
     var commentsStyle;
-    var imgSrc;
+    var imgSrc1;
+    var imgSrc2;
     if (this.state.showComments) {
       commentsStyle = {'display': 'inline-block'}
-      imgSrc = "assets/downcaret.png"
+      imgSrc1 = "assets/editicon.png";
+      imgSrc2 = "assets/downcaret.png"
     } else {
       commentsStyle = {'display': 'none'}
-      imgSrc = "assets/caretleft.png"
+      imgSrc1 = "assets/editicon.png";
+      imgSrc2 = "assets/caretleft.png"
     }
     return (
       <div className='grocery-item'>
@@ -71,8 +98,9 @@ var GroceryItem = React.createClass({
               <div className="quantity-num">{this.state.quantity}</div>
               <div className="plus" onClick={this.increaseQuantity}>+</div>
             </div>
-            <div className="name">{this.props.name}</div>
-            <img src={imgSrc} onClick={this.commentClicked}/>
+            <div className="name">{this.state.name}</div>
+            <img className="edit-grocery-name" src={imgSrc1} style={commentsStyle} onClick={this.editItemName}/>
+            <img src={imgSrc2} onClick={this.commentClicked}/>
           </div>
           <div className="assigned btn-group">
             <button type="button" className="btn btn-default dropdown-toggle"
@@ -93,9 +121,8 @@ var GroceryItem = React.createClass({
           </div>
         </div>
         <div className="edit-comments" style={commentsStyle}>
-          <h4>Comments:</h4>
           <div className="comments">{this.state.comments}</div>
-          <input type="text-area"></input>
+          <input type="text-area" placeholder="Add Comment"></input>
           <img src="assets/icon_edit_active.png" onClick={this.editComment}/>
         </div>
       </div>

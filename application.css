@@ -59,6 +59,8 @@ html, body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 20px;
+  box-shadow: 2px 2px rgba(0,0,0,.3)
+
 }
 
 .row-headers {
@@ -81,6 +83,10 @@ html, body {
   top: -5px;
   left: 10px;
   cursor: pointer;
+}
+
+#name-input {
+  font-size: 22px;
 }
 
 .cover {
@@ -115,18 +121,18 @@ html, body {
   cursor: pointer
 }
 
-.list {
-
+.grocery-item {
+  background: lightgrey;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-top: 10px !important;
+  padding: 3px;
 }
 
 .grocery-item-row {
   display: flex;
   align-items: center;
-  margin-top: 10px !important;
-  padding: 3px;
-  background: lightgrey;
-  border: 1px solid grey;
-  border-radius: 5px;
+
 }
 
 .name-col {
@@ -165,6 +171,13 @@ html, body {
   display: inline-block;
 }
 
+.edit-comments {
+  border-top: 1px solid grey;
+  width: 100%;
+  margin-top: 6px !important;
+  padding-top: 5px;
+}
+
 .edit-comments img {
   position: relative;
   left: 5px;
@@ -174,6 +187,13 @@ html, body {
   margin-left: 17px !important;
   height: 29px;
   cursor: pointer;
+}
+
+.name-col img.edit-grocery-name {
+  height: 17px;
+  position: relative;
+  top: 5px;
+  margin-left: 10px !important;
 }
 
 .assigned {
