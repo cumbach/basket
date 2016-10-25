@@ -19,6 +19,7 @@ var App = React.createClass({
     this.groceryItemListener = GroceryItemStore.addListener(this._onChange);
   },
   groceryItemsMap: function(){
+    // console.log(this.state.groceryItems)
     var map = [];
     if (typeof this.state.groceryItems !== 'undefined') {
       map = this.state.groceryItems.map(function(item){
@@ -27,7 +28,8 @@ var App = React.createClass({
                   key={item.name}
                   name={item.name}
                   sharedList={this.state.sharedList}
-                  bringUpModal={this.showModal}/>;
+                  bringUpModal={this.showModal}
+                  removeItem={this.removeItem}/>;
         }
       }.bind(this));
     }

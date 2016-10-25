@@ -42,25 +42,29 @@ var GroceryItem = React.createClass({
       var newComment = e.currentTarget.parentNode.getElementsByTagName('input')[0].value;
       e.currentTarget.parentNode.getElementsByTagName('input')[0].style.display = "none";
     } else {
-      e.currentTarget.parentNode.getElementsByTagName('input')[0].style.display = "block";
+      e.currentTarget.parentNode.getElementsByTagName('input')[0].style.display = "inline-block";
     }
     this.setState({editComment: !this.state.editComment})
     this.setState({comments: newComment});
+  },
+  removeGroceryItem: function(e){
+    var item = e.currentTarget.parentNode.getElementsByClassName('name')[0].innerHTML;
+    GroceryActions.removeGroceryItem(item);
   },
   render: function() {
     var commentsStyle;
     var imgSrc;
     if (this.state.showComments) {
-      commentsStyle = {'display': 'block'}
+      commentsStyle = {'display': 'inline-block'}
       imgSrc = "assets/downcaret.png"
     } else {
       commentsStyle = {'display': 'none'}
       imgSrc = "assets/caretleft.png"
-
     }
     return (
       <div className='grocery-item'>
         <div className='grocery-item-row'>
+          <img className="remove-button" src="assets/removebutton.png" onClick={this.removeGroceryItem}/>
           <div className="name-col">
             <div className="quantity">
               <div className="minus" onClick={this.decreaseQuantity}>-</div>
@@ -83,7 +87,10 @@ var GroceryItem = React.createClass({
             </ul>
 
           </div>
-          <div className="purchased" onClick={this.toggleCheck}><input type="checkbox" checked={this.state.purchased}></input>Mark Purchased</div>
+          <div className="purchased" onClick={this.toggleCheck}>
+            <input type="checkbox" checked={this.state.purchased}></input>
+            <div>Mark Purchased</div>
+          </div>
         </div>
         <div className="edit-comments" style={commentsStyle}>
           <h4>Comments:</h4>

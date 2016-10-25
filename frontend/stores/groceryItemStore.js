@@ -5,28 +5,26 @@ var GroceryItemStore = new Store(Dispatcher);
 
 var _groceryItems = [];
 
-// var setLocaleItems = function (localeItems) {
-//   for (var main in localeItems) {
-//     for (var lang in localeItems[main]) {
-//       _localeItems[lang] = localeItems[main][lang];
-//     }
-//   }
-// };
 function addGroceryItem(groceryItem) {
-  // console.log(groceryItem);
   _groceryItems.push(groceryItem);
 };
-GroceryItemStore.all = function () {
-  // var groceryItems = [];
-  // for (var id in _localeItems) {
-  //   localeItems.push(_localeItems[id]);
-  // }
-  return _groceryItems;
+function removeGroceryItem(groceryItem) {
+  _groceryItems = _groceryItems.filter(function(item){
+    return item.name != groceryItem;
+  });
 };
+GroceryItemStore.all = function(){
+  return _groceryItems;
+}
+
 GroceryItemStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case GroceryItemConstants.ADD_GROCERY_ITEM:
       addGroceryItem(payload.groceryItem);
+      GroceryItemStore.__emitChange();
+      break;
+    case GroceryItemConstants.REMOVE_GROCERY_ITEM:
+      removeGroceryItem(payload.groceryItem);
       GroceryItemStore.__emitChange();
       break;
   }

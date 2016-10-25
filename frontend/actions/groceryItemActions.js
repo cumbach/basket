@@ -8,10 +8,10 @@ var groceryItemActions = {
       groceryItem: groceryItem
     });
   },
-  receiveAllLocaleItems: function (localeItems) {
+  removeGroceryItem: function(groceryItem) {
     Dispatcher.dispatch({
-      actionType: LocaleConstants.LOCALES_RECEIVED,
-      localeItems: localeItems
+      actionType: GroceryConstants.REMOVE_GROCERY_ITEM,
+      groceryItem: groceryItem
     });
   }
 };

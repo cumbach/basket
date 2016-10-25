@@ -12,12 +12,18 @@ h1, h2, h3, h4, p, strong, em, div, ul {
   background: transparent;
 }
 
-a {
+a,
+img {
   cursor: pointer;
+}
+
+input {
+  border-radius: 3px;
 }
 
 html, body {
   height: 100%;
+  min-width: 500px;
 }
 
 
@@ -30,6 +36,8 @@ html, body {
 .nav-bar-row {
   width: 100%;
   height: 50px;
+  border-bottom: 1px solid grey;
+  margin-bottom: 25px !important;
 }
 
 #wrapper h1 {
@@ -42,12 +50,15 @@ html, body {
   float: left;
   display: inline-block;
   background: lightblue;
-  width: 86px;
-  height: 20px;
+  position: relative;
+  width: 111px;
+  height: 27px;
+  bottom: 4px;
   text-align: center;
   margin: 10px !important;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 20px;
 }
 
 .row-headers {
@@ -110,11 +121,12 @@ html, body {
 
 .grocery-item-row {
   display: flex;
+  align-items: center;
   margin-top: 10px !important;
   padding: 3px;
   background: lightgrey;
   border: 1px solid grey;
-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .name-col {
@@ -129,7 +141,8 @@ border-radius: 5px;
 
 .quantity {
   border: 1px solid black;
-  width: 55px;
+  min-width: 55px;
+  height:33px;
   text-align: center;
   font-size: 20px;
   border-radius: 5px;
@@ -141,6 +154,22 @@ border-radius: 5px;
 .quantity .plus {
   cursor: pointer
 }
+.remove-button {
+  margin-left: 0 !important;
+  height: 23px;
+  margin-right: 5px !important;
+  cursor: pointer;
+}
+
+.comments {
+  display: inline-block;
+}
+
+.edit-comments img {
+  position: relative;
+  left: 5px;
+}
+
 .name-col img {
   margin-left: 17px !important;
   height: 29px;
@@ -148,15 +177,22 @@ border-radius: 5px;
 }
 
 .assigned {
-  width: 20%;
+  width: 10%;
+  min-width: 90px;
   display:inline-block;
   text-align: right;
 }
 
 .purchased {
-  width: 20%;
+  width: 15%;
   display: inline-block;
-  /*margin-right: 20px !important;*/
+  margin-right: 5% !important;
+}
+
+.purchased input {
+  cursor: pointer;
+  float: left;
+  margin-right: 8px !important;
 }
 
 .dropdown-menu a {
@@ -173,6 +209,7 @@ border-radius: 5px;
   z-index: 3;
   background: white;
   border-radius: 5px;
+  top: 100px;
 }
 
 .member-list-row {
@@ -200,6 +237,7 @@ border-radius: 5px;
   min-width:55px;
   text-align: center;
   cursor: pointer;
+  box-shadow: 2px 2px rgba(0,0,0,.3)
 }
 
 .modal-done {
@@ -207,9 +245,10 @@ border-radius: 5px;
   margin-top: 20px !important;
   width: 55px;
   padding: 10px;
-  background: green;
+  background-image: linear-gradient(to bottom,#5cb85c 0,#419641 100%);
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: 2px 2px rgba(0,0,0,.3)
 }
 
 .cover {
