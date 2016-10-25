@@ -22,8 +22,28 @@ html, body {
 }
 
 /*HEADER*/
+
+.nav-bar-row {
+  width: 100%;
+  height: 50px;
+}
+
 #wrapper h1 {
+  text-align: left;
+  float: left;
+  display: inline-block;
+}
+
+.share-button {
+  float: left;
+  display: inline-block;
+  background: lightblue;
+  width: 86px;
+  height: 20px;
   text-align: center;
+  margin: 10px !important;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .row-headers {
@@ -77,15 +97,50 @@ html, body {
   position: relative;
   /*width: 20%;*/
   left: 5px;
+  cursor: pointer
 }
 
 .list {
 
 }
 
+.grocery-item-row {
+  display: flex;
+  margin-top: 10px !important;
+  padding: 3px;
+  background: lightgrey;
+  border: 1px solid grey;
+border-radius: 5px;
+}
+
+.name-col {
+  width: 60%;
+  display: flex;
+}
+
 .name {
-  width: 70%;
-  display: inline-block;
+  font-size: 20px;
+  margin-left: 10px !important;
+}
+
+.quantity {
+  border: 1px solid black;
+  width: 55px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.quantity .minus,
+.quantity .plus {
+  cursor: pointer
+}
+.name-col img {
+  margin-left: 17px !important;
+  height: 29px;
+  cursor: pointer;
 }
 
 .assigned {
@@ -95,67 +150,68 @@ html, body {
 }
 
 .purchased {
+  width: 20%;
   display: inline-block;
-  margin-right: 20px !important;
+  /*margin-right: 20px !important;*/
 }
 
 .dropdown-menu a {
   cursor: pointer;
 }
 
-.edit-list-modal {
-  width:100%;
-  display: inline-block;
-  position: absolute;
-  top: 150px;
+.member-modal {
+  padding:10px;
+  display: none;
+  width: 60%;
+  position:absolute;
   left: 20%;
+  margin: 0 auto !important;
   z-index: 3;
+  background: white;
+  border-radius: 5px;
 }
 
-.member-div {
-  position: relative;
-  top: 20px;
+.member-list-row {
+  margin: 5px 0 !important;
+  display: flex;
+  justify-content: space-between;
 }
 
-.member-name {
-  float: left;
-  width: 50px;
-}
-.member-email {
-  position: relative;
-  left: 30px;
+.add-member-row {
+  display: flex;
 }
 
-.new-member-input.input-group {
-  width: 75%;
+.add-name {
+  width: 40%;
 }
 
-#new-member-name {
-  width: 30% !important;
+.add-email {
+  width: 40%;
 }
 
-#new-member-email {
-  width: 40% !important;
-}
-.add-item-buttom {
+.add-member-button {
   width: 20%;
+  background: lightblue;
+  border-radius: 5px;
+  min-width:55px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .modal-done {
-  position: relative;
-  top: 30px;
+  margin: 0 auto !important;
+  margin-top: 20px !important;
+  width: 55px;
+  padding: 10px;
+  background: green;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-
-
-.input-group {
+.cover {
+  height: 100%;
   width: 100%;
-}
-
-.input-group-addon {
-  width: 30% !important;
-}
-
-.form-control {
-  width: 50% !important;
+  position: absolute;
+  background: rgba(0,0,0,.5);
+  z-index: 2;
 }
