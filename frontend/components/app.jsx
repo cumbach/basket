@@ -4,7 +4,7 @@ var groceryItemActions = require('../actions/groceryItemActions');
 var GroceryItem = require('./groceryItem');
 var MemberModal = require('./memberModal');
 
-var editlist = require("../assets/editlist.png");
+var editlist = require("file!../assets/editlist.png");
 
 
 var App = React.createClass({
