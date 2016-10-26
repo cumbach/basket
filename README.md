@@ -1,5 +1,8 @@
 # Getting Started
 
+### Live Link
+https://basket-chrisu.herokuapp.com/
+
 ### Clone the project
 Go to the github repo: https://github.com/cumbach/basket and copy the link to clone.
 In your terminal, clone the repo then navigate to the root directory.
